@@ -18,3 +18,8 @@ class SignUpForm(UserCreationForm):
             "password1",
             "password2",
         ]
+
+
+class TransactionForm(forms.Form):
+    recipient = forms.CharField(label="Recipient")
+    amount = forms.IntegerField(label="Amount", min_value=0)
