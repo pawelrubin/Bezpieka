@@ -24,7 +24,7 @@
     {% for transaction in transactions.send %}
     <tr>
       <td>{{ transaction.recipient.user.username }}</td>
-      <td>{{ transaction.amount }} PLN</td>
+      <td>{{ transaction.amount }}</td>
       <td>{{ transaction.date }}</td>
     </tr>
     {% endfor %}
