@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Transaction completed</h3>
+
+<p>Recipient: {{ recipient }}</p>
+<p>Amount: {{ amount }}</p>
+<a href="/dashboard">
+    <button>OK</button>
+</a>
+{% endblock %}

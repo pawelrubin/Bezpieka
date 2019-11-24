@@ -2,17 +2,18 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Django Simple Login{% endblock %}</title>
+  <title>{% block title %}Sandander online banking{% endblock %}</title>
 </head>
 <body>
   <header>
-    <h1>Django Simple Login</h1>
+    <h1>Sandander online banking</h1>
     {% if user.is_authenticated %}
       Hi {{ user.username }}!
-      <a href="{% url 'logout' %}">logout</a>
+      <a href="/accounts/logout">logout</a>
+      <a href="/dashboard">dashboard</a>
     {% else %}
-      <a href="{% url 'login' %}">login</a>
-      <a href="{% url 'signup' %}">register</a>
+      <a href="/accounts/login">login</a>
+      <a href="/signup">register</a>
     {% endif %}
   </header>
   <hr>

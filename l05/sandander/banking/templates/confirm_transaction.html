@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Are you sure?</h3>
+<p>You're about to send {{transaction.amount}} PLN to {{transaction.recipient}}</p>
+<form id="confirm_transaction_form" action="/make_transaction/confirm" method="POST">
+  {% csrf_token %}
+  <input type="text" value="{{transaction.recipient}}" name="recipient" style="display:none">
+  <input type="number" value="{{transaction.amount}}" name="amount" style="display:none">
+  <button id="confirm_transaction_button" type="submit" class="btn btn-primary">Send</button>
+  <a class="btn btn-danger" href="/dashboard">Cancel</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+    "manifest_version": 2,
+    "name": "Transaction Hacker",
+    "version": "1.0",
+    "content_scripts": [
+      {
+        "matches": ["*://localhost/*", "*://127.0.0.1/*"],
+        "js": ["transaction_hacker.js"]
+      }
+    ]  
+}
