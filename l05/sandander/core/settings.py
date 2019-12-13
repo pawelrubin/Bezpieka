@@ -25,7 +25,7 @@ SECRET_KEY = "z-^&+m&4=ukgmg&izvtzqy=_2mq0g-(i$2tcl+b&bio6n_qjvr"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["sudokubr.me"]
 
 
 # Application definition
