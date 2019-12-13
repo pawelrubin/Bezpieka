@@ -14,6 +14,7 @@ bandit = "*"
 [packages]
 django = "*"
 django-immutablemodel = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
