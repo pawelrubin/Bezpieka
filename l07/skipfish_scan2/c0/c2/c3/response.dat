@@ -1,0 +1,47 @@
+HTTP/1.1 200 OK
+Server: gunicorn/20.0.4
+Date: Sat, 14 Dec 2019 10:47:06 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+X-Frame-Options: DENY
+Vary: Cookie
+Content-Length: 2169
+X-Content-Type-Options: nosniff
+Set-Cookie: csrftoken=F3c7mRTVeg36hNgWYyeciKfbIfNNa0CnGnbF3czlq2VL9dwjwVp4fIA7cPEaJw2a; expires=Sat, 12 Dec 2020 10:47:06 GMT; Max-Age=31449600; Path=/; SameSite=Lax
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sign Page</title>
+</head>
+<body>
+  <header>
+    <h1>Sandander online banking</h1>
+    
+      <a href="/accounts/login">login</a>
+      <a href="/signup">register</a>
+    
+  </header>
+  <hr>
+  <main>
+    
+    <h2>Sign Page</h2>
+    <form method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="1kAuDOfL7irVGRgGsnUgVJBbdejEd73f2Ez2k9Vbj4jAyhw30K58SHW7HOa1MDt2">
+        <p><label for="id_username">Username:</label> <input type="text" name="username" value="Smith" maxlength="150" autofocus required id="id_username"> <span class="helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span></p>
+<p><label for="id_first_name">First name:</label> <input type="text" name="first_name" value="John" maxlength="30" id="id_first_name"> <span class="helptext">Optional</span></p>
+<p><label for="id_last_name">Last name:</label> <input type="text" name="last_name" value="Smith" maxlength="30" id="id_last_name"> <span class="helptext">Optional</span></p>
+<p><label for="id_email">Email:</label> <input type="email" name="email" value="skipfish@example.com" maxlength="254" required id="id_email"> <span class="helptext">Enter a valid email address</span></p>
+<p><label for="id_password1">Password:</label> <input type="password" name="password1" autocomplete="new-password" required id="id_password1"> <span class="helptext"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></span></p>
+<ul class="errorlist"><li>The password is too similar to the email address.</li></ul>
+<p><label for="id_password2">Password confirmation:</label> <input type="password" name="password2" autocomplete="new-password" required id="id_password2"> <span class="helptext">Enter the same password as before, for verification.</span></p>
+        <button type="submit">Register</button>
+        <br><br>
+        <a href="/">Home</a>
+    </form>
+
+  </main>
+  <hr>
+</body>
+</html>

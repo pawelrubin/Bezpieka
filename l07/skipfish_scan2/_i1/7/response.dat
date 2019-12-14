@@ -1,0 +1,30 @@
+HTTP/1.1 200 OK
+Server: gunicorn/20.0.4
+Date: Sat, 14 Dec 2019 10:54:00 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+X-Frame-Options: DENY
+Vary: Cookie
+Content-Length: 2229
+X-Content-Type-Options: nosniff
+Set-Cookie: csrftoken=F3c7mRTVeg36hNgWYyeciKfbIfNNa0CnGnbF3czlq2VL9dwjwVp4fIA7cPEaJw2a; expires=Sat, 12 Dec 2020 10:54:00 GMT; Max-Age=31449600; Path=/; SameSite=Lax
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sign Page</title>
+</head>
+<body>
+  <header>
+    <h1>Sandander online banking</h1>
+    
+      <a href="/accounts/login">login</a>
+      <a href="/signup">register</a>
+    
+  </header>
+  <hr>
+  <main>
+    
+    <h2>Sign Page</h2>
+    <form method="post"

@@ -1,0 +1,1 @@
+var res = {'data':'HTTP/1.1 302 Found\x0aServer: gunicorn/20.0.4\x0aDate: Fri, 13 Dec 2019 21:23:17 GMT\x0aConnection: close\x0aContent-Type: text/html; charset=utf-8\x0aLocation: /accounts/login\x0aX-Frame-Options: DENY\x0aContent-Length: 0\x0aVary: Cookie\x0aX-Content-Type-Options: nosniff\x0a\x0a'}

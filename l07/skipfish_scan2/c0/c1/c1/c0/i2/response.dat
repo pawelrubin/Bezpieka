@@ -1,0 +1,12 @@
+HTTP/1.1 302 Found
+Server: gunicorn/20.0.4
+Date: Fri, 13 Dec 2019 21:37:39 GMT
+Connection: close
+Content-Type: text/html; charset=utf-8
+Location: /admin/login/?next=/admin/banking/account/sfi9876/
+Expires: Fri, 13 Dec 2019 21:37:39 GMT
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate, private
+X-Frame-Options: DENY
+Content-Length: 0
+Vary: Cookie
+X-Content-Type-Options: nosniff

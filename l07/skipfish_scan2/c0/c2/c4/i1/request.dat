@@ -1,0 +1,13 @@
+POST /signup/ HTTP/1.1
+Host: 127.0.0.1:8000
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Mozilla/5.0 SF/2.10b
+Range: bytes=0-399999
+Referer: http://127.0.0.1/
+Authorization: Basic YW5vbjo5MnludDNzcTI5bWpHV1E=
+Cookie: csrftoken=F3c7mRTVeg36hNgWYyeciKfbIfNNa0CnGnbF3czlq2VL9dwjwVp4fIA7cPEaJw2a
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 196
+
+csrfmiddlewaretoken=EDbMMWnPfbxg047O2hE1lzsZOzJmcJHJFXakth3frXpVSunbAEPTixNVi9AJLf7w&username=Smith&first_name=John&last_name=Smith&email=skipfish@example.com&password1=skipfish&password2=skipfish
