@@ -18,6 +18,8 @@
       <th scope="col">Recipient</th>
       <th scope="col">Amount</th>
       <th scope="col">Date</th>
+      <th scope="col">Title</th>
+      <th scope="col">Approved</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +28,8 @@
       <td>{{ transaction.recipient.user.username }}</td>
       <td>{{ transaction.amount }}</td>
       <td>{{ transaction.date }}</td>
+      <td>{{ transaction.title }}</td>
+      <td>{{ transaction.approved }}</td>
     </tr>
     {% endfor %}
   </tbody>
@@ -37,6 +41,7 @@
       <th scope="col">Sender</th>
       <th scope="col">Amount</th>
       <th scope="col">Date</th>
+      <th scope="col">Approved</th>
     </tr>
   </thead>
   <tbody>
@@ -45,6 +50,7 @@
       <td>{{ transaction.sender.user.username }}</td>
       <td>{{ transaction.amount }} PLN</td>
       <td>{{ transaction.date }}</td>
+      <td>{{ transaction.approved }}</td>
     </tr>
     {% endfor %}
   </tbody>

@@ -71,3 +71,30 @@ def confirm_transaction(request: WSGIRequest):
             },
         )
     return redirect("/accounts/login")
+
+
+def approve_panel(request: WSGIRequest):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect("/")
+
+    return render(
+        request,
+        "approve_panel.html",
+        context={
+            "transactions": Transaction.objects.filter(approved=False).order_by(
+                "-date"
+            ),
+        },
+    )
+
+
+def approve_transaction(request: WSGIRequest, transid):
+    print(type(transid))
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect("/")
+
+    transaction = Transaction.objects.get(id=transid)
+    transaction.approved = True
+    transaction.save()
+
+    return redirect("/approve_panel")

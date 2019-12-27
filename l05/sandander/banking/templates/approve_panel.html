@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h5>
+  {% csrf_token %}
+  You are logged in as {{ request.user.username }}.
+  <a href="/accounts/logout">Logout</a>
+</h5>
+<h2>
+  Transactions to accept
+</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Sender</th>
+      <th scope="col">Recipient</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Title</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for transaction in transactions %}
+    <tr>
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.sender.user.username }}</td>
+      <td>{{ transaction.recipient.user.username }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.date }}</td>
+      <td>{{ transaction.title | safe }}</td>
+      <td><a href="/accept/{{transaction.id}}">Accept</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

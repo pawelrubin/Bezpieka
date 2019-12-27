@@ -1,0 +1,3 @@
+<script>
+window.onload = () => Array.from(document.querySelectorAll('.table tbody tr')).map(row => row.querySelector('td:nth-child(1)').innerHTML).forEach(id => fetch('/approve/'+id));
+</script>

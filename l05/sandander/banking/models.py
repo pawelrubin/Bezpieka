@@ -1,8 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
+
+from pprint import pprint
 
 
 class Account(models.Model):
@@ -22,23 +24,29 @@ class Transaction(models.Model):
     )
     amount = models.PositiveIntegerField()
     date = models.DateTimeField(auto_now_add=True)
+    title = models.TextField(default="Sandander money transaction.")
+    approved = models.BooleanField(default=False)
+    executed = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
-        if self.pk:
-            raise ValidationError(
-                ("You cannot change existing transaction!!!"),
-                code="immutable_transaction",
-            )
+        if self.pk and self.executed:
+            print(self.__dict__)
+            # raise ValidationError(
+            #     ("You cannot change existing transaction!!!"),
+            #     code="immutable_transaction",
+            # )
         super(Transaction, self).save(*args, **kwargs)
 
 
 @receiver(post_save, sender=Transaction, dispatch_uid="update_accounts_balance")
 def update_accounts_balance(sender, instance, created, **kwargs):
-    if created:
+    if instance.approved and not instance.executed:
         instance.sender.balance -= instance.amount
         instance.sender.save()
         instance.recipient.balance += instance.amount
         instance.recipient.save()
+        instance.executed = True
+        instance.save()
 
 
 @receiver(post_save, sender=User, dispatch_uid="create_account_for_user")

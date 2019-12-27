@@ -1,8 +1,9 @@
 from django.contrib import admin
 
-from . import models
+from .models import Transaction, Account
 
 
+@admin.register(Account)
 class AccountAdmin(admin.ModelAdmin):
     list_display = (
         "user",
@@ -10,9 +11,6 @@ class AccountAdmin(admin.ModelAdmin):
     )
 
 
+@admin.register(Transaction)
 class TransactionAdmin(admin.ModelAdmin):
-    list_display = ("sender", "recipient", "amount", "date")
-
-
-admin.site.register(models.Account, AccountAdmin)
-admin.site.register(models.Transaction, TransactionAdmin)
+    list_display = ("sender", "recipient", "amount", "date", "title", "approved", "executed")
