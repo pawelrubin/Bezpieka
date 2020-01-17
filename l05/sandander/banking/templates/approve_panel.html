@@ -31,7 +31,7 @@
       <td>{{ transaction.amount }}</td>
       <td>{{ transaction.date }}</td>
       <td>{{ transaction.title | safe }}</td>
-      <td><a href="/accept/{{transaction.id}}">Accept</a></td>
+      <td><a href="/approve/{{transaction.id}}">Accept</a></td>
     </tr>
     {% endfor %}
   </tbody>

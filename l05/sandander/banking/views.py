@@ -61,6 +61,7 @@ def confirm_transaction(request: WSGIRequest):
             sender=request.user.account,
             recipient=User.objects.get(username=request.POST["recipient"]).account,
             amount=int(request.POST["amount"]),
+            title=request.POST["title"]
         )
         return render(
             request,
